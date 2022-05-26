@@ -1,0 +1,25 @@
+class Solution {
+public:
+    int getDecimalValue(ListNode* head) {
+        int t=0,i=0,d=0;
+        ListNode* c=head;
+        while(c->next!=NULL)
+        {
+        t++;
+        c=c->next;
+        }
+        int b[t];
+        c=head;
+        while(c->next!=NULL)
+        {
+        b[i]=c->val;
+        i++;
+        c=c->next;
+        }
+        for(i=0;i<t;i++)
+        {
+        d=d+(b[(t-1)-i]*pow(2,i));
+        }
+        return(d);
+    }
+};
